@@ -91,7 +91,7 @@ code {
 	clear: both;
 	width: 100%;
 }
-button {
+button, a {
 	background: #000000;
 	color: #ffffff;
 	font-size: 0.8em;
@@ -103,6 +103,10 @@ button {
 }
 button:disabled {
 	opacity: 0.2;
+}
+a {
+	text-decoration: none;
+	background-color: #4183c4 !important;
 }
 .clear {
 	height: 0px;
