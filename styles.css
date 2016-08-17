@@ -9,12 +9,23 @@ html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre
 
 /* our styling goodness */
 * {
+
 	-webkit-box-sizing: border-box !important;
+	-moz-box-sizing: border-box !important;
 	box-sizing: border-box !important;
+
 	-webkit-transition-delay: 0s !important;
+	-moz-transition-delay: 0s !important;
 	transition-delay: 0s !important;
+
 	-webkit-transition: all 0.6s ease !important;
+	-moz-transition: all 0.6s ease !important;
 	transition: all 0.6s ease !important;
+
+	-webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+	-moz-backface-visibility: hidden; /* Chrome, Safari, Opera */
+	backface-visibility: hidden;
+
 }
 html {
 	background: #ffe188;
@@ -23,6 +34,7 @@ html {
 body {
 	padding: 5%;
 	font-family: arial;
+	overflow: hidden;
 }
 body:after {
     content: "";
@@ -34,25 +46,34 @@ body:after {
     z-index: -1;
     background-color: #ffd454;
     border-radius: 0px;
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
 
-    -webkit-box-sizing: border-box !important;
-    box-sizing: border-box !important;
-    -webkit-transition-delay: 0s !important;
-    transition-delay: 0s !important;
-    -webkit-transition: all 2s ease !important;
-    transition: all 2s ease !important;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	transform: rotate(0deg);
+
+	-webkit-box-sizing: border-box !important;
+	-moz-box-sizing: border-box !important;
+	box-sizing: border-box !important;
+
+	-webkit-transition-delay: 0s !important;
+	-moz-transition-delay: 0s !important;
+	transition-delay: 0s !important;
+
+	-webkit-transition: all 2s ease !important;
+	-moz-transition: all 2s ease !important;
+	transition: all 2s ease !important;
 
 }
 body.angle {
 }
 body.angle:after {
     -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
 body.angle.circle:after {
     -webkit-transform: rotate(15deg) scale(1.1) translateX(-100vw);
+    -moz-transform: rotate(15deg) scale(1.1) translateX(-100vw);
     transform: rotate(15deg) scale(1.1) translateX(-100vw);
     border-radius: 100vw;
 }
@@ -77,6 +98,7 @@ p {
 }
 #stage.blur {
 	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
 	filter: blur(5px);
 }
 #stage.outline {
