@@ -1,0 +1,112 @@
+/*
+YUI 3.18.1 (build f7e7bcb)
+Copyright 2014 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+
+html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
+
+/* our styling goodness */
+* {
+	-webkit-box-sizing: border-box !important;
+	box-sizing: border-box !important;
+	-webkit-transition-delay: 0s !important;
+	transition-delay: 0s !important;
+	-webkit-transition: all 0.6s ease !important;
+	transition: all 0.6s ease !important;
+}
+html {
+	background: #ffe188;
+	position: relative;
+}
+body {
+	padding: 5%;
+	font-family: arial;
+}
+body:after {
+    content: "";
+    position: absolute;
+    height: 140vh;
+    width: 140vw;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background-color: #ffd454;
+    border-radius: 0px;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+
+    -webkit-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    -webkit-transition-delay: 0s !important;
+    transition-delay: 0s !important;
+    -webkit-transition: all 2s ease !important;
+    transition: all 2s ease !important;
+
+}
+body.angle {
+}
+body.angle:after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+body.angle.circle:after {
+    -webkit-transform: rotate(15deg) scale(1.1) translateX(-100vw);
+    transform: rotate(15deg) scale(1.1) translateX(-100vw);
+    border-radius: 100vw;
+}
+h1 {
+	font-size: 2em;
+	margin-bottom: 0.5%;
+}
+p {
+	margin-bottom: 2%;
+	font-size: 0.8em;
+}
+#stage {
+	float: left;
+	background-color: #D9115A;
+	width: 0%;
+	height: 40px;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+#stage.blue {
+	background-color: #0F58CB;
+}
+#stage.blur {
+	-webkit-filter: blur(5px);
+	filter: blur(5px);
+}
+#stage.outline {
+	background-color: transparent;
+	border: solid 4px #000000;
+}
+#stage.black {
+	background-color: #000000;
+}
+code {
+	float: left;
+	clear: both;
+	width: 100%;
+}
+button {
+	background: #000000;
+	color: #ffffff;
+	font-size: 0.8em;
+	border-radius: 2px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 5px 8px;
+}
+button:disabled {
+	opacity: 0.2;
+}
+.clear {
+	height: 0px;
+	width: 100%;
+	float: left;
+	display: block;
+}
