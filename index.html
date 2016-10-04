@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>oknowthis.js</title>
+	<title>okaynowthis.js</title>
 
 	<!-- jQuery -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<!-- oknowthis.js plugin -->
-	<script type="text/javascript" src="oknowthis.js"></script>
+	<!-- okaynowthis.js plugin -->
+	<script type="text/javascript" src="okaynowthis.min.js"></script>
 	<!-- styling -->
 	<link rel="stylesheet" type="text/css" href="styles.css">
 
@@ -23,7 +23,7 @@
 
 		// pause button
 		btn_pause.on('click',function(){
-			$('#stage').oknowthis('pause',function(){
+			$('#stage').okaynowthis('pause',function(){
 				btn_resume.removeAttr('disabled');
 				btn_pause.attr('disabled','disabled');
 				code.prepend('paused <br>');
@@ -32,7 +32,7 @@
 
 		// resume button
 		btn_resume.on('click',function(){
-			$('#stage').oknowthis('resume',function(){
+			$('#stage').okaynowthis('resume',function(){
 				btn_pause.removeAttr('disabled');
 				btn_resume.attr('disabled','disabled');
 				code.prepend('resumed <br>');
@@ -55,46 +55,46 @@
 			var stage = $('#stage');
 
 			// build our queue
-			stage.oknowthis('frame',0,function(){
+			stage.okaynowthis('frame',0,function(){
 				stage.css('width','10%');
 				code.prepend('function 1: 0ms delay, 10% width <br>');
 
-			}).oknowthis('frame',1000,function(){
+			}).okaynowthis('frame',1000,function(){
 				stage.css('width','20%');
 				code.prepend('function 2: 1000ms delay, 20% width <br>');
 
-			}).oknowthis('frame',500,function(){
+			}).okaynowthis('frame',500,function(){
 				stage.css('width','40%').addClass('blue blur');
 				code.prepend('function 3: 500ms delay, 40% width, add classes .blue .blur <br>');
 
-			}).oknowthis('frame',1000,function(){
+			}).okaynowthis('frame',1000,function(){
 				body.addClass('angle');
 				stage.css('width','50%');
 				code.prepend('function 4: 1000ms delay, width 50%, add class to body .angle <br>');
 
-			}).oknowthis('frame',1500,function(){
+			}).okaynowthis('frame',1500,function(){
 				stage.css('width','70%').removeClass('blur');
 				code.prepend('function 5: 1500ms delay, width 70%, removeClass .blur <br>');
 
-			}).oknowthis('frame',700,function(){
+			}).okaynowthis('frame',700,function(){
 				body.addClass('circle');
 				stage.css('width','80%').removeClass('blue').addClass('outline');
 				code.prepend('function 6: 700ms delay, 80% width, removeClass .blue, add class .outline, add class to body .circle <br>');
 
-			}).oknowthis('frame',1000,function(){
+			}).okaynowthis('frame',1000,function(){
 				stage.css('width','90%');
 				code.prepend('function 7: 1000ms delay, 90% width <br>');
 
-			}).oknowthis('frame',600,function(){
+			}).okaynowthis('frame',600,function(){
 				stage.css('width','100%').addClass('black');
 				code.prepend('function 7: 600ms delay, width 100%, add class .black <br>');
 
-			}).oknowthis('frame',1000,function(){
+			}).okaynowthis('frame',1000,function(){
 				stage.css('width','').removeClass('black outline');
 				body.removeClass('angle circle');
 				code.prepend('function 8: 1000ms, clear width, remove class .black .outine, body remove class .dark .circle <br>');
 
-			}).oknowthis('frame',600,function(){
+			}).okaynowthis('frame',600,function(){
 				code.prepend('function 9: 600ms reset the stage <br>');
 				reset_animation(); // just for good measure we are reseting the entire stage at the end
 
@@ -110,7 +110,7 @@
 			var stage = $('#stage');
 			var wrap = $('#stage-wrap');
 
-			stage.oknowthis('reset',function(){
+			stage.okaynowthis('reset',function(){
 				// delete the entire staging element
 				stage.remove();
 				// add the original stage markup back in (for complex markup consider using .clone on document ready)
@@ -133,7 +133,7 @@
 </head>
 <body>
 
-	<h1>oknowthis.js</h1>
+	<h1>okaynowthis.js</h1>
 	<p>A jQuery plugin that makes queuing, pausing and resuming functions a synch.</p>
 
 	<!-- our buttons -->
@@ -142,7 +142,7 @@
 	<button class="resume" disabled>resume</button>
 	<button class="reset">reset</button>
 
-	<a title="View on GitHub" href="https://github.com/jessengatai/oknowthis.js/tree/master" class="github">github</a>
+	<a title="View on GitHub" href="https://github.com/jessengatai/okaynowthis.js/tree/master" class="github">github</a>
 
 	<!-- the stage -->
 	<div id="stage-wrap">
