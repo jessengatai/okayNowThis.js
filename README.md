@@ -1,5 +1,5 @@
 # oknowthis.js
-A jQuery plugin that makes queuing (chaining), pausing and resuming functions a synch.
+A jQuery plugin that makes queuing (chaining), pausing and resuming functions a cinch.
 
 ## Getting Started
 The only requirement for okaynowthis.js to function is jQuery, so be sure to call that before okaynowthis.js
@@ -21,18 +21,16 @@ $('#yourstage').okaynowthis(method,delay,function(){
 ```
 
 ## Methods
-There are 4 main methods you can pass to the plugin.
+There are 4 methods you can pass to the plugin.
 * frame
 * pause
 * resume
 * reset
 
-Here are the basic examples of all 4 methods in action.
+#### Frame
+It's best to think of each 'frame' like a key-frame in an animation. Each frame you add to your staging element will effectively be a new function added to the queue on that element.
 
-### Frame
-It's best to think of each 'frame' like a keyframe in an animation. Each frame you add to your staging element will effectivly be a new function added to the queue on that element.
-
-The 'frame' method will require us to pass a delay in milliseconds to each 'frame' we create. The delay will dicate the time in takes before the next 'frame' fires. This is ideal if your adding or removing a CSS class with a transition time, as we can make sure the CSS animation finishes before moving onto the next frame.
+The 'frame' method will require us to pass a delay in milliseconds to each 'frame' we create. The delay will dictate the time in takes before the next 'frame' fires. This is ideal if your adding or removing a CSS class with a transition time, as we can make sure the CSS animation finishes before moving onto the next frame.
 
 ```javascript
 $('.play').on('click',function(){
@@ -50,7 +48,7 @@ $('.play').on('click',function(){
 });
 ```
 
-### Pause
+#### Pause
 ```javascript
 $('.pause').on('click',function(){
 	$('#yourstage').okaynowthis('pause',function(){
@@ -59,7 +57,7 @@ $('.pause').on('click',function(){
 });
 ```
 
-### Resume
+#### Resume
 ```javascript
 $('.resume').on('click',function(){
 	$('#yourstage').okaynowthis('resume',function(){
@@ -68,7 +66,7 @@ $('.resume').on('click',function(){
 });
 ```
 
-### Resume
+#### Resume
 ```javascript
 $('.resume').on('click',function(){
 	$('#yourstage').okaynowthis('resume',function(){
