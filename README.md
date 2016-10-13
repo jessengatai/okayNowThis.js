@@ -1,7 +1,8 @@
 # oknowthis.js
 A jQuery plugin that makes queuing (chaining), pausing and resuming functions a synch.
 
-### Getting Started
+## Getting Started
+---
 The only requirement for okaynowthis.js to function is jQuery, so be sure to call that before okaynowthis.js
 
 ```html
@@ -11,7 +12,8 @@ The only requirement for okaynowthis.js to function is jQuery, so be sure to cal
 </head>
 ```
 
-### Basic Usage
+## Basic Usage
+---
 The plugin works by manipulating queue's attached to DOM elements that are built using jQuery functions like 'delay'. Meaning you will need to call okaynowthis() on unique element that has an unique ID.
 
 ```javascript
@@ -20,7 +22,8 @@ $('#yourstage').okaynowthis(method,delay,function(){
 });
 ```
 
-### Methods
+## Methods
+---
 There are 3 main methods you can pass to okaynowthis.js.
 * pause
 * resume
