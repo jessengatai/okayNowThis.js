@@ -23,9 +23,9 @@ $('#yourstage').okaynowthis(method,delay,function(){
 ### Methods
 There are 3 main methods you can pass to okaynowthis.js.
 
-	* `pause`
-	* `resume`
-	* `frame`
+	* pause
+	* resume
+	* frame
 
 Here are basic examples of all 3 methods in action.
 
