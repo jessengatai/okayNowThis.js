@@ -52,7 +52,7 @@ $('.play').on('click',function(){
 ```javascript
 $('.pause').on('click',function(){
 	$('#yourstage').okaynowthis('pause',function(){
-		// do something additional on pause
+		// do something additional on pause, like enabled our resume button!
 	});
 });
 ```
@@ -61,16 +61,16 @@ $('.pause').on('click',function(){
 ```javascript
 $('.resume').on('click',function(){
 	$('#yourstage').okaynowthis('resume',function(){
-		// do something additional on resume
+		// do something additional on resume, like enable our pause button!
 	});
 });
 ```
 
-#### Resume
+#### Reset
 ```javascript
 $('.resume').on('click',function(){
 	$('#yourstage').okaynowthis('resume',function(){
-		// do something additional on resume
+		// do something additional on resume, like clean up all the mess we probably made!
 	});
 });
 ```
