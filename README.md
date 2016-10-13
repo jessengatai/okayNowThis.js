@@ -37,11 +37,15 @@ $('.play').on('click',function(){
 
 	// keyframe 1
 	$('#yourstage').okaynowthis('keyframe',0,function(){
-		// some code to run for keyframe 1 with 0 second delay
+		// code to run with no delay, like showing our pause button!
 
 	// keyframe 2
 	}).okaynowthis('keyframe',1000,function(){
-		// some code to run for keyframe 2 with 1000 milliseconds delay
+		// code to run with 1 second delay after keyframe 1
+
+	// keyframe 3
+	}).okaynowthis('keyframe',500,function(){
+		// code to run with half second delay after keyframe 2
 
 	});
 
@@ -52,7 +56,7 @@ $('.play').on('click',function(){
 ```javascript
 $('.pause').on('click',function(){
 	$('#yourstage').okaynowthis('pause',function(){
-		// do something additional on pause, like enabled our resume button!
+		// do something additional on pause, like showing our resume button!
 	});
 });
 ```
@@ -61,7 +65,7 @@ $('.pause').on('click',function(){
 ```javascript
 $('.resume').on('click',function(){
 	$('#yourstage').okaynowthis('resume',function(){
-		// do something additional on resume, like enable our pause button!
+		// do something additional on resume, like showing our pause button!
 	});
 });
 ```
