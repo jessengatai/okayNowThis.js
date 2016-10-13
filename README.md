@@ -12,7 +12,7 @@ The only requirement for okaynowthis.js to function is jQuery, so be sure to cal
 ```
 
 ## Basic Usage
-The plugin works by manipulating queue's attached to DOM elements that are built using jQuery functions like 'delay'. Meaning you will need to call okaynowthis() on an element that has an unique ID. Throughout the docs we will refer to this element as the 'staging' element.
+The plugin works by manipulating queues attached to DOM elements that are built using jQuery functions like 'delay'. Meaning you will need to call okaynowthis() on an element that has an unique ID. Throughout the docs we will refer to this element as the 'staging' element.
 
 ```javascript
 $('#yourstage').okaynowthis(method,delay,function(){
@@ -22,26 +22,26 @@ $('#yourstage').okaynowthis(method,delay,function(){
 
 ## Methods
 There are 4 methods you can pass to the plugin.
-* frame
+* keyframe
 * pause
 * resume
 * reset
 
-#### Frame
-It's best to think of each 'frame' as key-frame in an animation. Each frame being appended onto the queue attached to your staging element.
+#### Keyframe
+Each keyframe will be appended onto the queue attached to your staging element.
 
-The 'frame' method will require us to pass a delay in milliseconds. This delay will dictate the time in takes before the next 'frame' fires. This is ideal if your adding or removing a CSS class with a transition time, as we can make sure the CSS animation finishes before moving onto the next frame.
+The keyframe method requires us to pass a delay in milliseconds. This delay dictates the time in takes before the next keyframe fires. This is ideal if your adding or removing a CSS class with a transition time, as we can make sure the CSS animation finishes before moving onto the next keyframe.
 
 ```javascript
 $('.play').on('click',function(){
 
-	// frame 1
-	$('#yourstage').okaynowthis('frame',0,function(){
-		// some code to run for frame 1 with 0 second delay
+	// keyframe 1
+	$('#yourstage').okaynowthis('keyframe',0,function(){
+		// some code to run for keyframe 1 with 0 second delay
 
-	// frame 2
-	}).okaynowthis('frame',1000,function(){
-		// some code to run for frame 2 with 1000 milliseconds delay
+	// keyframe 2
+	}).okaynowthis('keyframe',1000,function(){
+		// some code to run for keyframe 2 with 1000 milliseconds delay
 
 	});
 
