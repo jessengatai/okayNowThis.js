@@ -12,7 +12,7 @@ The only requirement for okaynowthis.js to function is jQuery, so be sure to cal
 ```
 
 ## Basic Usage
-The plugin works by manipulating queue's attached to DOM elements that are built using jQuery functions like 'delay'. Meaning you will need to call okaynowthis() on unique element that has an unique ID.
+The plugin works by manipulating queue's attached to DOM elements that are built using jQuery functions like 'delay'. Meaning you will need to call okaynowthis() on an element that has an unique ID.
 
 ```javascript
 $('#yourstage').okaynowthis(method,delay,function(){
@@ -21,31 +21,19 @@ $('#yourstage').okaynowthis(method,delay,function(){
 ```
 
 ## Methods
-There are 3 main methods you can pass to okaynowthis.js.
+There are 4 main methods you can pass to the plugin.
+* frame
 * pause
 * resume
-* frame
+* reset
 
-Here are basic examples of all 3 methods in action.
+Here are the basic examples of all 4 methods in action.
 
-**Pause:**
-```javascript
-$('.pause').on('click',function(){
-	$('#yourstage').okaynowthis('pause',function(){
-		// do something additional on pause
-	});
-});
-```
-**Resume:**
-```javascript
-$('.resume').on('click',function(){
-	$('#yourstage').okaynowthis('resume',function(){
-		// do something additional on resume
-	});
-});
-```
+### Frame
+It's best to think of each 'frame' like a keyframe in an animation. Each frame you add to your staging element will effectivly be a new function added to the queue on that element.
 
-**Frame:**
+The 'frame' method will require us to pass a delay in milliseconds to each 'frame' we create. The delay will dicate the time in takes before the next 'frame' fires. This is ideal if your adding or removing a CSS class with a transition time, as we can make sure the CSS animation finishes before moving onto the next frame.
+
 ```javascript
 $('.play').on('click',function(){
 
@@ -55,9 +43,38 @@ $('.play').on('click',function(){
 
 	// frame 2
 	}).okaynowthis('frame',1000,function(){
-		// some code to run for frame 2 with 1000 milisecond delay
+		// some code to run for frame 2 with 1000 milliseconds delay
 
 	});
 
 });
 ```
+
+### Pause
+```javascript
+$('.pause').on('click',function(){
+	$('#yourstage').okaynowthis('pause',function(){
+		// do something additional on pause
+	});
+});
+```
+
+### Resume
+```javascript
+$('.resume').on('click',function(){
+	$('#yourstage').okaynowthis('resume',function(){
+		// do something additional on resume
+	});
+});
+```
+
+### Resume
+```javascript
+$('.resume').on('click',function(){
+	$('#yourstage').okaynowthis('resume',function(){
+		// do something additional on resume
+	});
+});
+```
+
+## Classes
