@@ -36,7 +36,7 @@
 				}
 			});
 
-			// moved to next in line
+			// moved to next frame in line
 	    	return this;
 	    },
 	    /**
@@ -100,7 +100,7 @@
             // Default to "frame"
             return ok_methods.frame.apply( this, arguments );
         } else {
-            $.error( 'Method ' +  method_or_option + ' does not exist on jQuery.tooltip' );
+            $.error( 'Method ' +  method_or_option + ' does not exist on jQuery.okaynowthis' );
         }  
 
     };
