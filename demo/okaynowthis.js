@@ -12,10 +12,10 @@
 	var ok_methods = {
 		/**
 	     *
-	     * Build / run our queue frame by frame
+	     * Build the queue
 	     *
 	     */
-	    frame : function(milliseconds,callback) {
+	    keyframe : function(milliseconds,callback) {
 	    	wrap = this;
 	    	// if the queue is currently paused to not pass go
 	    	if( wrap.hasClass('okaynowthis-paused') ) 
@@ -36,12 +36,12 @@
 				}
 			});
 
-			// moved to next frame in line
+			// moved to next keyframe in line
 	    	return this;
 	    },
 	    /**
 	     *
-	     * Pause the frames
+	     * Pause the queue
 	     *
 	     */
 	    pause : function(callback) {
@@ -59,7 +59,7 @@
 	    },
 		/**
 	     *
-	     * Resume the show
+	     * Resume queue
 	     *
 	     */
 	    resume : function(callback) {
@@ -79,7 +79,7 @@
 	    },
 		/**
 	     *
-	     * Reset the frames
+	     * Reset (delete) the queue
 	     *
 	     */
 	    reset : function(callback) {
@@ -97,8 +97,8 @@
         if ( ok_methods[method_or_option] ) {
             return ok_methods[ method_or_option ].apply( this, Array.prototype.slice.call( arguments, 1 ));
         } else if ( typeof method_or_option === 'object' || ! method_or_option ) {
-            // Default to "frame"
-            return ok_methods.frame.apply( this, arguments );
+            // Default to keyframe
+            return ok_methods.keyframe.apply( this, arguments );
         } else {
             $.error( 'Method ' +  method_or_option + ' does not exist on jQuery.okaynowthis' );
         }  

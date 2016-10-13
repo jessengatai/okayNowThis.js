@@ -41,46 +41,46 @@ jQuery(document).ready(function($) {
 		var stage = $('#stage');
 
 		// build our queue
-		stage.okaynowthis('frame',0,function(){
+		stage.okaynowthis('keyframe',0,function(){
 			stage.css('width','10%');
 			code.prepend('function 1: 0ms delay, 10% width <br>');
 
-		}).okaynowthis('frame',1000,function(){
+		}).okaynowthis('keyframe',1000,function(){
 			stage.css('width','20%');
 			code.prepend('function 2: 1000ms delay, 20% width <br>');
 
-		}).okaynowthis('frame',500,function(){
+		}).okaynowthis('keyframe',500,function(){
 			stage.css('width','40%').addClass('blue blur');
 			code.prepend('function 3: 500ms delay, 40% width, add classes .blue .blur <br>');
 
-		}).okaynowthis('frame',1000,function(){
+		}).okaynowthis('keyframe',1000,function(){
 			body.addClass('angle');
 			stage.css('width','50%');
 			code.prepend('function 4: 1000ms delay, width 50%, add class to body .angle <br>');
 
-		}).okaynowthis('frame',1500,function(){
+		}).okaynowthis('keyframe',1500,function(){
 			stage.css('width','70%').removeClass('blur');
 			code.prepend('function 5: 1500ms delay, width 70%, removeClass .blur <br>');
 
-		}).okaynowthis('frame',700,function(){
+		}).okaynowthis('keyframe',700,function(){
 			body.addClass('circle');
 			stage.css('width','80%').removeClass('blue').addClass('outline');
 			code.prepend('function 6: 700ms delay, 80% width, removeClass .blue, add class .outline, add class to body .circle <br>');
 
-		}).okaynowthis('frame',1000,function(){
+		}).okaynowthis('keyframe',1000,function(){
 			stage.css('width','90%');
 			code.prepend('function 7: 1000ms delay, 90% width <br>');
 
-		}).okaynowthis('frame',600,function(){
+		}).okaynowthis('keyframe',600,function(){
 			stage.css('width','100%').addClass('black');
 			code.prepend('function 7: 600ms delay, width 100%, add class .black <br>');
 
-		}).okaynowthis('frame',1000,function(){
+		}).okaynowthis('keyframe',1000,function(){
 			stage.css('width','').removeClass('black outline');
 			body.removeClass('angle circle');
 			code.prepend('function 8: 1000ms, clear width, remove class .black .outine, body remove class .dark .circle <br>');
 
-		}).okaynowthis('frame',600,function(){
+		}).okaynowthis('keyframe',600,function(){
 			code.prepend('function 9: 600ms reset the stage <br>');
 			reset_animation(); // just for good measure we are reseting the entire stage at the end
 
