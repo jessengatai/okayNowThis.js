@@ -26,13 +26,22 @@
 	    		wrap.addClass('okaynowthis-playing');
 	    	}
 
+	    	count = 0;
+
 	    	// add our function to the queue
 			wrap.delay(milliseconds).queue(function(){
 				callback();
 				wrap.dequeue();
-				// remove the running class if queue is empty
-				if( wrap.queue().length == 0 ) {
+				queue = wrap.queue().length;
+				count++;
+				// add keyframe class to wrap
+				wrap.removeClass('keyframe-'+(count-1)).addClass('keyframe-'+count);
+				// remove the status class if queue is empty (end of queue)
+				if( queue == 0 ) {
 					wrap.removeClass('okaynowthis-playing');
+					wrap.removeClass (function (index, css) {
+						return (css.match (/(^|\s)keyframe-\S+/g) || []).join(' ');
+					});
 				}
 			});
 
@@ -87,6 +96,9 @@
 			this.stop(true,true);
 			// remove the plugin classes that were added
 			this.removeClass('okaynowthis-playing okaynowthis-paused');
+			this.removeClass (function (index, css) {
+				return (css.match (/(^|\s)keyframe-\S+/g) || []).join(' ');
+			});
 			// run any addtional code if there is a callback
 			callback();
 	    },

@@ -64,6 +64,7 @@ $('.pause').on('click',function(){
 ```
 
 #### Resume
+Resume will re-attach and re-add the queue and plugin classes to the staging element
 ```javascript
 $('.resume').on('click',function(){
 	$('#yourstage').okaynowthis('resume',function(){
@@ -73,6 +74,7 @@ $('.resume').on('click',function(){
 ```
 
 #### Reset
+Reset will delete the queue and remove the plugin classes attached to the staging element.
 ```javascript
 $('.reset').on('click',function(){
 	$('#yourstage').okaynowthis('reset',function(){
@@ -82,3 +84,7 @@ $('.reset').on('click',function(){
 ```
 
 ## Classes
+There are 3 classes added to the staging element
+* okaynowthis-playing
+* okaynowthis-paused
+* keyframe-x (where x is the current keyframe number)
