@@ -72,9 +72,9 @@ $('.resume').on('click',function(){
 
 #### Reset
 ```javascript
-$('.resume').on('click',function(){
-	$('#yourstage').okaynowthis('resume',function(){
-		// do something additional on resume, like clean up all the mess we probably made!
+$('.reset').on('click',function(){
+	$('#yourstage').okaynowthis('reset',function(){
+		// do something additional on reset, like clean up all the mess we probably made!
 	});
 });
 ```
