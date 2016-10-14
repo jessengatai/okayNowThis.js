@@ -2,7 +2,7 @@
 A jQuery plugin that makes queuing (chaining), pausing and resuming functions a cinch.
 
 ## Getting Started
-The only requirement for okaynowthis.js to function is jQuery, so be sure to call that before okaynowthis.js
+The only requirement for okaynowthis.js to function is jQuery, so be sure to call that before the plugin.
 
 ```html
 <head>
@@ -37,7 +37,7 @@ $('.play').on('click',function(){
 
 	// keyframe 1
 	$('#yourstage').okaynowthis('keyframe',0,function(){
-		// code to run with no delay, like showing our pause button!
+		// code to run with no delay, like show our pause button!
 
 	// keyframe 2
 	}).okaynowthis('keyframe',1000,function(){
@@ -56,7 +56,7 @@ $('.play').on('click',function(){
 ```javascript
 $('.pause').on('click',function(){
 	$('#yourstage').okaynowthis('pause',function(){
-		// do something additional on pause, like showing our resume button!
+		// do something on pause, like show our resume button!
 	});
 });
 ```
@@ -65,7 +65,7 @@ $('.pause').on('click',function(){
 ```javascript
 $('.resume').on('click',function(){
 	$('#yourstage').okaynowthis('resume',function(){
-		// do something additional on resume, like showing our pause button!
+		// do something on resume, like show our pause button!
 	});
 });
 ```
@@ -74,7 +74,7 @@ $('.resume').on('click',function(){
 ```javascript
 $('.reset').on('click',function(){
 	$('#yourstage').okaynowthis('reset',function(){
-		// do something additional on reset, like clean up all the mess we probably made!
+		// do something on reset, like clean up all the mess we probably made!
 	});
 });
 ```
