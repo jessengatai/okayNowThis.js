@@ -55,7 +55,7 @@ $('.play').on('click',function(){
 ```
 
 #### Pause
-Does what it says on the box'. Works by cloning the queue attached to the staging element so we can re-attached it later.
+Does what it says on the box. Works by cloning the queue attached to the staging element so we can re-attached later.
 ```javascript
 $('.pause').on('click',function(){
 	$('#yourstage').okaynowthis('pause',function(){
