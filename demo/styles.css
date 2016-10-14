@@ -133,6 +133,9 @@ p {
 .half h3 {
 	margin-bottom: 1em;
 }
+code {
+	color: #7c7e83;
+}
 #status,
 #keyframe {
 	float: left;
