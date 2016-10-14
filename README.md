@@ -1,5 +1,5 @@
 # oknowthis.js
-A jQuery plugin that makes queuing (chaining), pausing and resuming functions a cinch.
+Makes queuing, pausing and resuming functions a cinch. Perfect for creating complex animations using functions as keyframes.
 
 [View the demo](https://jessengatai.github.io/okaynowthis.js/)
 
