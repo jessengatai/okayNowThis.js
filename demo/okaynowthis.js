@@ -10,15 +10,17 @@
 
 	var ok_remaining = '';
 	var ok_methods = {
-		/**
-	     *
-	     * Build the queue
-	     *
-	     */
+
+			/**
+			 * Build the queue
+			 * @param  {inter}   milliseconds the time to delay before moving through the chain
+			 * @param  {Function} callback    the callback used to move to the next chain item
+			 * @return {Function}             the next line item
+			 */
 	    keyframe : function(milliseconds,callback) {
 	    	wrap = this;
 	    	// if the queue is currently paused to not pass go
-	    	if( wrap.hasClass('okaynowthis-paused') ) 
+	    	if( wrap.hasClass('okaynowthis-paused') )
 	    		return this;
 
 	    	// if this is the first instance of the queue add a queue playing class
@@ -29,29 +31,29 @@
 	    	count = 0;
 
 	    	// add our function to the queue
-			wrap.delay(milliseconds).queue(function(){
-				callback();
-				wrap.dequeue();
-				queue = wrap.queue().length;
-				count++;
-				// add keyframe class to wrap
-				wrap.removeClass('keyframe-'+(count-1)).addClass('keyframe-'+count);
-				// remove the status class if queue is empty (end of queue)
-				if( queue == 0 ) {
-					wrap.removeClass('okaynowthis-playing');
-					wrap.removeClass (function (index, css) {
-						return (css.match (/(^|\s)keyframe-\S+/g) || []).join(' ');
-					});
-				}
-			});
+				wrap.delay(milliseconds).queue(function(){
+					callback();
+					wrap.dequeue();
+					queue = wrap.queue().length;
+					count++;
+					// add keyframe class to wrap
+					wrap.removeClass('keyframe-'+(count-1)).addClass('keyframe-'+count);
+					// remove the status class if queue is empty (end of queue)
+					if( queue == 0 ) {
+						wrap.removeClass('okaynowthis-playing');
+						wrap.removeClass (function (index, css) {
+							return (css.match (/(^|\s)keyframe-\S+/g) || []).join(' ');
+						});
+					}
+				});
 
-			// moved to next keyframe in line
+				// moved to next keyframe in line
 	    	return this;
 	    },
+
 	    /**
-	     *
-	     * Pause the queue
-	     *
+	     * Method to pause the key on current keyframe
+	     * @param  {Function} callback the callback to use once the chain has paused
 	     */
 	    pause : function(callback) {
 	    	// only pause if a queue exists and the queue is currently playing
@@ -66,11 +68,11 @@
 	    		callback();
 	    	}
 	    },
-		/**
-	     *
-	     * Resume queue
-	     *
-	     */
+
+			/**
+			 * Method to resume a currently paused chain
+			 * @param  {Function} callback the callback to use once the chain has resumed
+			 */
 	    resume : function(callback) {
 	    	// only resume if a queue exists and the queue is currently paused
 	    	if( ok_remaining.length > 0 && this.hasClass('okaynowthis-paused') ) {
@@ -86,35 +88,39 @@
 	    		callback();
 	    	}
 	    },
-		/**
-	     *
-	     * Reset (delete) the queue
-	     *
-	     */
+
+			/**
+			 * Method to reset the chain
+			 * @param  {Function} callback the callback to use once the chain has been reset
+			 */
 	    reset : function(callback) {
-	    	// remove and delete the queue
-			this.stop(true,true);
-			// remove the plugin classes that were added
-			this.removeClass('okaynowthis-playing okaynowthis-paused');
-			this.removeClass (function (index, css) {
-				return (css.match (/(^|\s)keyframe-\S+/g) || []).join(' ');
-			});
-			// run any addtional code if there is a callback
-			callback();
+		    // remove and delete the queue
+				this.stop(true,true);
+				// remove the plugin classes that were added
+				this.removeClass('okaynowthis-playing okaynowthis-paused');
+				this.removeClass (function (index, css) {
+					return (css.match (/(^|\s)keyframe-\S+/g) || []).join(' ');
+				});
+				// run any addtional code if there is a callback
+				callback();
 	    },
+
 	};
 
-    $.fn.okaynowthis = function(method_or_option) {
-
-        if ( ok_methods[method_or_option] ) {
-            return ok_methods[ method_or_option ].apply( this, Array.prototype.slice.call( arguments, 1 ));
-        } else if ( typeof method_or_option === 'object' || ! method_or_option ) {
-            // Default to keyframe
-            return ok_methods.keyframe.apply( this, arguments );
-        } else {
-            $.error( 'Method ' +  method_or_option + ' does not exist on jQuery.okaynowthis' );
-        }  
-
-    };
+	/**
+	 * Setup the our plugin!
+	 * @param  {[type]} method_or_option [description]
+	 * @return {[type]}                  [description]
+	 */
+  $.fn.okaynowthis = function(method_or_option) {
+    if ( ok_methods[method_or_option] ) {
+      return ok_methods[ method_or_option ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+    } else if ( typeof method_or_option === 'object' || ! method_or_option ) {
+      // default to keyframe
+      return ok_methods.keyframe.apply( this, arguments );
+    } else {
+      $.error( 'Method ' +  method_or_option + ' does not exist on jQuery.okaynowthis' );
+    }
+  };
 
 }( jQuery ));
