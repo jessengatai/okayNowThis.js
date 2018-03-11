@@ -53,7 +53,7 @@ gulp.task('watch', function () {
   gulp.watch('./public/**/*', ['livereload']);
 });
 
-// update the GitHub pages subtree (by running a basic git command via shell)
+// update the GitHub pages subtree branch (by running a basic git command via shell)
 gulp.task('pushDemo', () => {
   return gulp.src('*.js', {read: false})
   .pipe(shell([
@@ -63,5 +63,6 @@ gulp.task('pushDemo', () => {
 
 // setup the default 'gulp task'
 gulp.task('default', ['connect', 'watch', 'sass', 'transpile', 'minify']);
+
 // package the dist folder and update the demo on gh-pages
 gulp.task('package', ['pushDemo']);
