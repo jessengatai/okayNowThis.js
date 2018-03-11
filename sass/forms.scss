@@ -1,0 +1,53 @@
+$height: calc(15px + 1.2vh + 1.2vw);
+
+/* handle basic inputs */
+input[type="text"],
+textarea {
+  @extend p;
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background: none;
+  border-bottom: solid 1px black;
+  margin: 0px;
+}
+
+button,
+.button {
+  @extend p;
+  -webkit-appearance: none;
+  display: inline-block;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  border: none;
+  border-radius: 999px;
+  height: $height;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin: 0px;
+  line-height: $height;
+  text-align: center;
+  background: white;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 3px 15px rgba(0,0,0,.1);
+  }
+  &.circle {
+    height: $height;
+    width: $height;
+    padding: 0px;
+  }
+  &:disabled {
+  	opacity: 0.2;
+  	background-color: inherit !important;
+  	color: inherit !important;
+  	cursor: default !important;
+  }
+
+}

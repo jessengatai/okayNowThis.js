@@ -1,0 +1,37 @@
+{
+  "name": "okaynowthis.js",
+  "version": "1.0.1",
+  "description": "Makes queuing, pausing and resuming functions a cinch. Perfect for creating complex animations using functions as keyframes.",
+  "main": "/public/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessengatai/okaynowthis.js.git"
+  },
+  "keywords": [
+    "jQuery",
+    "chain",
+    "chaining",
+    "animation"
+  ],
+  "author": "Jesse Ngatai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jessengatai/okaynowthis/issues"
+  },
+  "homepage": "https://github.com/jessengatai/okaynowthis#readme",
+  "dependencies": {
+    "npm": "^5.7.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-connect": "^5.5.0",
+    "gulp-minify": "^2.1.0",
+    "gulp-sass": "^3.1.0"
+  }
+}

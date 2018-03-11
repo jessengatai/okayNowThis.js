@@ -1,13 +1,13 @@
 jQuery(document).ready(function($) {
 
-	body = $('body');
-	log_c = $('#log');
-	log_z = $('#status');
-	log_x = $('#keyframe');
-	btn_pause = $('button.pause');
-	btn_resume = $('button.resume');
-	btn_reset = $('button.reset');
-	btn_play = $('button.play');
+	const body = $('body');
+	const log_c = $('#log');
+	const log_z = $('#status');
+	const log_x = $('#keyframe');
+	const btn_pause = $('button.pause');
+	const btn_resume = $('button.resume');
+	const btn_reset = $('button.reset');
+	const btn_play = $('button.play');
 
 	// pause button
 	btn_pause.on('click',function(){
@@ -27,6 +27,7 @@ jQuery(document).ready(function($) {
 			log_c.prepend('resumed <br>');
 			log_z.text('.okaynowthis-playing');
 		});
+    console.log('this is a log');
 	});
 
 	// reset button

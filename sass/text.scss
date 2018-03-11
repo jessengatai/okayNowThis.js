@@ -1,0 +1,62 @@
+$h1-size: calc(24px + .8vh + .8vw) ;
+$h2-size: calc(20px + .6vh + .6vw) ;
+$h3-size: calc(18px + .6vh + .6vw) ;
+$h4-size: calc(16px + .5vh + .5vw) ;
+$h5-size: calc(13px + .4vh + .4vw) ;
+$h6-size: calc(10px + .1vh + .1vw) ;
+$p-size: calc(12px + .3vh + .3vw) ;
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: system;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-size: $p-size;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* text */
+h1 {
+  margin-bottom: $h1-size;
+  font-size: $h1-size;
+  font-weight: 600;
+  line-height: 1.2;
+}
+h2 {
+  margin-bottom: $h2-size;
+  font-size: $h2-size;
+  font-weight: 600;
+  line-height: 1.25;
+}
+h3 {
+  margin-bottom: $h3-size;
+  font-size: $h3-size;
+  font-weight: 500;
+  line-height: 1.3;
+}
+h4 {
+  margin-bottom: $h4-size;
+  font-size: $h4-size;
+  font-weight: 500;
+  line-height: 1.35;
+}
+h5 {
+  margin-bottom: $h5-size;
+  font-size: $h5-size;
+  font-weight: 400;
+  line-height: 1.4;
+}
+h6 {
+  margin-bottom: $h6-size;
+  font-size: $h6-size;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+p {
+  margin-bottom: $h1-size;
+  font-size: $p-size;
+  font-weight: 400;
+  line-height: 1.6;
+}
