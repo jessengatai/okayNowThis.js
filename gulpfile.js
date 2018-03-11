@@ -54,11 +54,14 @@ gulp.task('watch', function () {
 });
 
 // update the GitHub pages subtree (by running a basic git command via shell)
-gulp.task('example', () => {
-  shell.task('git subtree push --prefix public origin gh-pages');
+gulp.task('pushDemo', () => {
+  return gulp.src('*.js', {read: false})
+  .pipe(shell([
+    'git subtree push --prefix public origin gh-pages'
+  ]))
 })
 
 // setup the default 'gulp task'
-gulp.task('default', ['connect', 'watch', 'sass', 'transpile']);
+gulp.task('default', ['connect', 'watch', 'sass', 'transpile', 'minify']);
 // package the dist folder and update the demo on gh-pages
-gulp.task('package', ['minify', 'updateDemo']);
+gulp.task('package', ['pushDemo']);
