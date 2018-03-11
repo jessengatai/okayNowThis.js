@@ -3,6 +3,7 @@ var sass = require('gulp-sass');
 var connect = require('gulp-connect');
 var babel = require('gulp-babel');
 var minify = require('gulp-minify');
+var shell = require('gulp-shell');
 
 // setup the local enviroment
 gulp.task('connect', function(){
@@ -52,5 +53,12 @@ gulp.task('watch', function () {
   gulp.watch('./public/**/*', ['livereload']);
 });
 
+// update the GitHub pages subtree (by running a basic git command via shell)
+gulp.task('example', () => {
+  shell.task('git subtree push --prefix public origin gh-pages');
+})
+
 // setup the default 'gulp task'
-gulp.task('default', ['connect', 'watch', 'sass', 'transpile', 'minify']);
+gulp.task('default', ['connect', 'watch', 'sass', 'transpile']);
+// package the dist folder and update the demo on gh-pages
+gulp.task('package', ['minify', 'updateDemo']);
