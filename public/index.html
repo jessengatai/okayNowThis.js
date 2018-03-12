@@ -12,33 +12,51 @@
   </head>
   <body>
 
-  	<h1>okaynowthis.js</h1>
-  	<p>A jQuery plugin that makes queuing, pausing and resuming functions a cinch.</p>
+    <div class="center">
+      <header>
+      	<h1>okayNowThis.js</h1>
+      	<p>A jQuery plugin that makes pausing and resuming queued functions a cinch.</p>
+        <nav>
+        	<button class="button play">Play</button>
+        	<button class="button pause" disabled>Pause</button>
+        	<button class="button resume" disabled>Resume</button>
+        	<button class="button reset">Reset</button>
+        	<a class="button github" title="View on GitHub" href="https://github.com/jessengatai/okaynowthis.js/">GitHub</a>
+        </nav>
+      </header>
 
-  	<!-- our buttons -->
-  	<button class="button play">Play</button>
-  	<button class="button pause" disabled>Pause</button>
-  	<button class="button resume" disabled>Resume</button>
-  	<button class="button reset">Reset</button>
-  	<a class="button github" title="View on GitHub" href="https://github.com/jessengatai/okaynowthis.js/">GitHub</a>
-
-  	<!-- the stage -->
-  	<div id="stage-wrap">
-  		<div id="stage"></div>
-  	</div>
-
-  	<!-- message areas -->
-    <div id="logs">
-    	<div class="half">
-    		<h3>Console</h3>
-    		<code id="log"></code>
+    	<!-- the stage -->
+    	<div id="stage-wrap" class="progress-bar-wrap">
+    		<div id="stage" class="progress-bar"></div>
     	</div>
-    	<div class="half">
-    		<h3>Plugin classes attached to #stage</h3>
-    		<code id="status"></code>
-    		<code id="keyframe"></code>
-    	</div>
+
+    	<!-- message areas -->
+      <div id="logs">
+      	<div class="half">
+      		<h6>Console</h6>
+      		<small id="log"></small>
+      	</div>
+      	<div class="half">
+      		<h6>Active classes</h6>
+      		<small id="status"></small>
+      		<small id="keyframe"></small>
+      	</div>
+      </div>
     </div>
+
+    <!-- geometry -->
+    <div class="geo-triangle"></div>
+    <div id="shape-1"></div>
+    <div class="geo-rain rain-1"></div>
+    <div class="geo-rain rain-2"></div>
+    <div class="geo-rain rain-3"></div>
+    <div class="geo-rain rain-4"></div>
+    <div class="geo-rain rain-5"></div>
+    <div class="geo-rain rain-6"></div>
+    <div class="geo-rain-vertical rain-1"></div>
+    <div class="geo-rain-vertical rain-2"></div>
+    <div class="geo-rain-vertical rain-3"></div>
+    <div class="geo-block"></div>
 
   	<!-- heyo! -->
   	<a id="jesse" target="_blank" href="http://jessengatai.com" title="It's me!">Built by Jesse! <span>&#129304;</span></a>

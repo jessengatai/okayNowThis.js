@@ -1,4 +1,4 @@
-$height: calc(15px + 1.2vh + 1.2vw);
+$height: calc(12px + 1vh + 1vw);
 
 /* handle basic inputs */
 input[type="text"],
@@ -24,19 +24,19 @@ button,
   border: none;
   border-radius: 999px;
   height: $height;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  margin: 0px;
+  padding-left: 1.5vw;
+  padding-right: 1.5vw;
+  margin: 0px 0.15vw;
   line-height: $height;
   text-align: center;
   background: white;
   color: black;
   text-decoration: none;
   cursor: pointer;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, background 0.1s ease;
 
   &:hover {
-    box-shadow: 0 3px 15px rgba(0,0,0,.1);
+    box-shadow: -1px 8px 17px rgba(51, 36, 80, 0.1);
   }
   &.circle {
     height: $height;
@@ -44,8 +44,10 @@ button,
     padding: 0px;
   }
   &:disabled {
-  	opacity: 0.2;
+  	opacity: 0.5;
+    text-decoration: line-through;
   	background-color: inherit !important;
+    box-shadow: none !important;
   	color: inherit !important;
   	cursor: default !important;
   }

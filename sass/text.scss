@@ -5,6 +5,7 @@ $h4-size: calc(16px + .5vh + .5vw) ;
 $h5-size: calc(13px + .4vh + .4vw) ;
 $h6-size: calc(10px + .1vh + .1vw) ;
 $p-size: calc(12px + .3vh + .3vw) ;
+$s-size: calc(10px + .1vh + .1vw) ;
 
 html {
   -webkit-font-smoothing: antialiased;
@@ -59,4 +60,10 @@ p {
   font-size: $p-size;
   font-weight: 400;
   line-height: 1.6;
+}
+small {
+  margin-bottom: $s-size;
+  font-size: $s-size;
+  line-height: 1.6;
+  display: inline-block;
 }
