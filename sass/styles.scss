@@ -154,12 +154,12 @@ header a.github {
     transition: transform 1s ease;
     opacity: 0;
 	body.block-in & {
-    transform: rotate(45deg) translateX(100%);
+    transform: rotate(45deg) translateX(66%);
 		opacity: 1;
 	}
 	body.block-in.block-out & {
-    transform: rotate(45deg) translateX(-100%);
-    opacity: 0;
+    transform: rotate(45deg) translateX(200%);
+    opacity: 1;
 	}
 }
 
@@ -198,10 +198,9 @@ header a.github {
   	width: auto;
   	margin-right: 5px;
   }
-}
-
 small {
 	color: #74749e;
+}
 }
 
 /* buttons */
@@ -219,30 +218,6 @@ small {
 	max-width: calc(900px + 2vw);
 	margin: auto;
 	padding: calc(2vh + 2vw);
-}
-
-/* misc */
-#jesse {
-	position: fixed;
-	bottom: 10px;
-	right:  10px;
-	color: #7c7e83;
-	font-size: 0.8em;
-	font-size: bold;
-	text-decoration: none;
-	transition: all 0.2s ease;
-  &:hover {
-  	color: #ffffff;
-  }
-  span {
-  	display: inline-block;
-    transform: translateY(0px);
-    transition: all 0.4s ease;
-  }
-  :hover span {
-  	font-size: 2em;
-    transform: translateY(0px) rotate(-15deg);
-  }
 }
 
 /* responsive */
