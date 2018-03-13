@@ -31,7 +31,7 @@ gulp.task('transpile', function() {
 
 // minify required javascript for dist
 gulp.task('minify', function() {
-  gulp.src('./public/js/okaynowthis.js')
+  gulp.src('./public/js/okayNowThis.js')
     .pipe(minify({
         ext:{
             min:'.min.js'
