@@ -29,17 +29,6 @@ gulp.task('transpile', function() {
       .pipe(gulp.dest('./public/js'))
 });
 
-// minify required javascript for dist
-gulp.task('minify', function() {
-  gulp.src('./public/js/okayNowThis.js')
-    .pipe(minify({
-        ext:{
-            min:'.min.js'
-        },
-    }))
-    .pipe(gulp.dest('./dist/'))
-});
-
 // setup the live reload of public files
 gulp.task('livereload', function (){
   gulp.src('./public/**/*')
@@ -54,15 +43,29 @@ gulp.task('watch', function () {
 });
 
 // update the GitHub pages subtree branch (by running a basic git command via shell)
-gulp.task('pushDemo', () => {
+gulp.task('push', () => {
   return gulp.src('*.js', {read: false})
   .pipe(shell([
     'git subtree push --prefix public origin gh-pages'
   ]))
 })
 
-// setup the default 'gulp task'
-gulp.task('default', ['connect', 'watch', 'sass', 'transpile', 'minify']);
+// minify required javascript for dist
+gulp.task('minify', function() {
+  return gulp.src('./public/js/okayNowThis.js')
+      .pipe(minify({
+          ext:{
+              min:'.min.js'
+          },
+      }))
+      .pipe(gulp.dest('./dist/'))
+});
 
-// package the dist folder and update the demo on gh-pages
-gulp.task('package', ['pushDemo']);
+// setup the default 'gulp task'
+gulp.task('default', ['connect', 'watch', 'sass', 'transpile']);
+
+// update the demo files on gh-pages
+gulp.task('demo', ['push']);
+
+// ready the files for ditrubution /dist/
+gulp.task('dist', ['minify']);
