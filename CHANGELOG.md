@@ -2,6 +2,7 @@
 
 2018-03-12
 
+ - camelCase the plugin name
  - update the repo structure & organise files
  - give the demo page styles a bit of an overhaul
 

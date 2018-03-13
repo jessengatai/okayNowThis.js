@@ -1,23 +1,23 @@
-# oknowthis.js
-Makes queuing, pausing and resuming functions a cinch. Perfect for creating complex animations using functions as keyframes.
+# okayNowThis.js
+A jQuery plugin that makes pausing and resuming queued functions a cinch.
 
-[View the demo](https://jessengatai.github.io/okaynowthis.js/)
+[View the demo](https://jessengatai.github.io/okayNowThis.js/)
 
 ## Getting Started
-The only requirement for okaynowthis.js to function is jQuery, so be sure to call that before the plugin.
+The only requirement for okayNowThis.js to function is jQuery, so be sure to call that before the plugin.
 
 ```html
 <head>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script type="text/javascript" src="okaynowthis.min.js"></script>
+	<script type="text/javascript" src="okayNowThis.min.js"></script>
 </head>
 ```
 
 ## Basic Usage
-The plugin works by manipulating queues attached to DOM elements that are built using jQuery functions like 'delay'. Meaning you will need to call okaynowthis() on an element that has an unique ID. Throughout the docs we will refer to this element as the 'staging' element.
+The plugin works by manipulating queues attached to DOM elements that are built using jQuery functions like 'delay'. Meaning you will need to call okayNowThis() on an element that has an unique ID. Throughout the docs we will refer to this element as the 'staging' element.
 
 ```javascript
-$('#yourstage').okaynowthis(method,delay,function(){
+$('#yourstage').okayNowThis(method,delay,function(){
 	// some code to run
 });
 ```
@@ -38,15 +38,15 @@ The keyframe method requires us to pass a delay in milliseconds. This delay dict
 $('.play').on('click',function(){
 
 	// keyframe 1
-	$('#yourstage').okaynowthis('keyframe',0,function(){
+	$('#yourstage').okayNowThis('keyframe',0,function(){
 		// code to run with no delay, like show our pause button!
 
 	// keyframe 2
-	}).okaynowthis('keyframe',1000,function(){
+	}).okayNowThis('keyframe',1000,function(){
 		// code to run with 1 second delay after keyframe 1
 
 	// keyframe 3
-	}).okaynowthis('keyframe',500,function(){
+	}).okayNowThis('keyframe',500,function(){
 		// code to run with half second delay after keyframe 2
 
 	});
@@ -58,7 +58,7 @@ $('.play').on('click',function(){
 Does what it says on the box. Works by cloning the queue attached to the staging element so we can re-attached later.
 ```javascript
 $('.pause').on('click',function(){
-	$('#yourstage').okaynowthis('pause',function(){
+	$('#yourstage').okayNowThis('pause',function(){
 		// do something on pause, like show our resume button!
 	});
 });
@@ -68,7 +68,7 @@ $('.pause').on('click',function(){
 Resume will re-attach the queue and re-add the plugin classes to the staging element.
 ```javascript
 $('.resume').on('click',function(){
-	$('#yourstage').okaynowthis('resume',function(){
+	$('#yourstage').okayNowThis('resume',function(){
 		// do something on resume, like show our pause button!
 	});
 });
@@ -78,7 +78,7 @@ $('.resume').on('click',function(){
 Reset will delete the queue and remove the plugin classes attached to the staging element.
 ```javascript
 $('.reset').on('click',function(){
-	$('#yourstage').okaynowthis('reset',function(){
+	$('#yourstage').okayNowThis('reset',function(){
 		// do something on reset, like clean up all the mess we probably made!
 	});
 });
@@ -86,6 +86,6 @@ $('.reset').on('click',function(){
 
 ## Classes
 There are 3 classes added to the staging element
-* okaynowthis-playing
-* okaynowthis-paused
+* okayNowThis-playing
+* okayNowThis-paused
 * keyframe-x (where x is the current keyframe number)

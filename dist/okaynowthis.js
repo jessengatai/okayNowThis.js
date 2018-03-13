@@ -3,9 +3,9 @@
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 /*!
- * okaynowthis.js v1.0.1
- * Chain, pause, resume and reset queued functions
- * https://github.com/jessengatai/okaynowthis.js
+ * okayNowThis.js v1.0.1
+ * A jQuery plugin that makes pausing and resuming queued functions a cinch.
+ * https://github.com/jessengatai/okayNowThis.js
  * MIT License
  * by Jesse Ngatai - http://jessengatai.com
  */
@@ -24,11 +24,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     keyframe: function keyframe(milliseconds, callback) {
       var wrap = this;
       // if the queue is currently paused to not pass go
-      if (wrap.hasClass('okaynowthis-paused')) return this;
+      if (wrap.hasClass('okayNowThis-paused')) return this;
 
       // if this is the first instance of the queue add a queue playing class
-      if (!wrap.hasClass('okaynowthis-playing')) {
-        wrap.addClass('okaynowthis-playing');
+      if (!wrap.hasClass('okayNowThis-playing')) {
+        wrap.addClass('okayNowThis-playing');
       }
 
       var count = 0;
@@ -43,7 +43,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         wrap.removeClass('keyframe-' + (count - 1)).addClass('keyframe-' + count);
         // remove the status class if queue is empty (end of queue)
         if (queue == 0) {
-          wrap.removeClass('okaynowthis-playing');
+          wrap.removeClass('okayNowThis-playing');
           wrap.removeClass(function (index, css) {
             return (css.match(/(^|\s)keyframe-\S+/g) || []).join(' ');
           });
@@ -60,13 +60,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      */
     pause: function pause(callback) {
       // only pause if a queue exists and the queue is currently playing
-      if (this.queue().length > 0 && this.hasClass('okaynowthis-playing')) {
+      if (this.queue().length > 0 && this.hasClass('okayNowThis-playing')) {
         // save the queue to our global variable
         ok_remaining = this.queue();
         // remove the queue that was attached
         this.stop(true, true);
         // adjust the stage lement classes
-        this.addClass('okaynowthis-paused').removeClass('okaynowthis-playing');
+        this.addClass('okayNowThis-paused').removeClass('okayNowThis-playing');
         // if theres a callback run it
         callback();
       }
@@ -78,7 +78,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      */
     resume: function resume(callback) {
       // only resume if a queue exists and the queue is currently paused
-      if (ok_remaining.length > 0 && this.hasClass('okaynowthis-paused')) {
+      if (ok_remaining.length > 0 && this.hasClass('okayNowThis-paused')) {
         // remove "inprogress" string from the queue array
         var array = ok_remaining.slice(1);
         // requeue to our stage element
@@ -86,7 +86,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         // clear ok_remaining so resume button can't be double pressed
         ok_remaining = '';
         // adjust the stage lement classes
-        this.addClass('okaynowthis-playing').removeClass('okaynowthis-paused');
+        this.addClass('okayNowThis-playing').removeClass('okayNowThis-paused');
         // if theres a callback run it
         callback();
       }
@@ -100,7 +100,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       // remove and delete the queue
       this.stop(true, true);
       // remove the plugin classes that were added
-      this.removeClass('okaynowthis-playing okaynowthis-paused');
+      this.removeClass('okayNowThis-playing okayNowThis-paused');
       this.removeClass(function (index, css) {
         return (css.match(/(^|\s)keyframe-\S+/g) || []).join(' ');
       });
@@ -115,14 +115,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
    * @param  {[type]} method_or_option [description]
    * @return {[type]}                  [description]
    */
-  $.fn.okaynowthis = function (method_or_option) {
+  $.fn.okayNowThis = function (method_or_option) {
     if (ok_methods[method_or_option]) {
       return ok_methods[method_or_option].apply(this, Array.prototype.slice.call(arguments, 1));
     } else if ((typeof method_or_option === 'undefined' ? 'undefined' : _typeof(method_or_option)) === 'object' || !method_or_option) {
       // default to keyframe
       return ok_methods.keyframe.apply(this, arguments);
     } else {
-      $.error('Method ' + method_or_option + ' does not exist on jQuery.okaynowthis');
+      $.error('Method ' + method_or_option + ' does not exist on jQuery.okayNowThis');
     }
   };
 })(jQuery);

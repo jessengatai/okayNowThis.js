@@ -1,7 +1,7 @@
 {
-  "name": "okaynowthis.js",
+  "name": "okayNowThis.js",
   "version": "1.0.1",
-  "description": "Makes queuing, pausing and resuming functions a cinch. Perfect for creating complex animations using functions as keyframes.",
+  "description": "A jQuery plugin that makes pausing and resuming queued functions a cinch.",
   "main": "/public/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
